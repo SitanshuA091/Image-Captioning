@@ -32,3 +32,57 @@ for img_name in tqdm(os.listdir(directory)):
     image_id = img_name.split('.')[0]
     features[image_id] = feature
 ```
+
+## **Create Mapping of Captions to Images**
+
+- Created mapping of captions to images for better preprocessing of text captions data
+
+```python
+mapping = {}
+# process lines
+for line in tqdm(captions_doc.split('\n')):
+    # split the line by comma(,)
+    tokens = line.split(',')
+    if len(line) < 2:
+        continue
+    image_id, caption = tokens[0], tokens[1:]
+    # remove extension from image ID
+    image_id = image_id.split('.')[0]
+    # convert caption list to string
+    caption = " ".join(caption)
+    # create list if needed
+    if image_id not in mapping:
+        mapping[image_id] = []
+    # store the caption
+    mapping[image_id].append(caption)
+```
+
+## **Preprocessing text data**
+- preprocessed text captions ( cleaning textual data)
+```python
+def Preprocess_Captions(mapping):
+    for key, captions in mapping.items():
+        for i in range(len(captions)):
+            # take one caption at a time
+            caption = captions[i]
+            # preprocessing steps
+            # convert to lowercase
+            caption = caption.lower()
+            # delete digits, special chars, etc., 
+            caption = caption.replace('[^A-Za-z]', '')
+            # delete additional spaces
+            caption = caption.replace('\s+', ' ')
+            # add start and end tags to the caption
+            caption = 'start ' + " ".join([word for word in caption.split() if len(word)>1]) + ' end'
+            captions[i] = caption
+```
+
+## **Tokenizing text captions**
+
+- Used the keras tokenizer to tokenize text captions <br>
+```python 
+from tensorflow.keras.preprocessing.text import Tokenizer
+Tokenizer = Tokenizer()
+Tokenizer.fit_on_texts(all_captions)
+vocab_size = len(Tokenizer.word_index) + 1
+```
