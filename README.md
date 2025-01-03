@@ -15,9 +15,9 @@ Some examples of Images-Caption pairs in the flickr dataset <br>
 
 ## **Image Features Extraction** 
 
-Extracted image features using the VGG 16 model
-
-loaded the VGG16 model and restructured the model by Using `model.layers[-2].output` and extracted features from the penultimate layer, omitting the final activation layer, to ensure raw feature representations are obtained as the model was initially designed for classification
+- Extracted image features using the **VGG** 16 model
+- loaded the VGG16 model with the necessary imports
+-  restructured the model by Using `model.layers[-2].output` and extracted features from the penultimate layer, omitting the final activation layer, to ensure raw feature representations are obtained as the model was initially designed for classification
 
 
 ```python
