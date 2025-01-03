@@ -2,7 +2,7 @@ from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras.models import Model
 import numpy as np
 
-# Load VGG16 model
+# Load the VGG16 model
 model = VGG16()
 model = Model(inputs=model.inputs, outputs=model.layers[-2].output)
 
