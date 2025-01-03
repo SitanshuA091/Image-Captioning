@@ -1,3 +1,10 @@
+import os
+import pickle
+import numpy as np
+from tqdm.notebook import tqdm
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 # Load and preprocess images
 def preprocess_image(image_path):
     """Load and preprocess an image for feature extraction."""
