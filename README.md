@@ -6,7 +6,7 @@
 - It works quite simply We Input the image and it outputs descriptive captions
 ## **Image Captions** <br>
 Some examples of Images-Caption pairs in the flickr dataset <br>
-![Alt text](Images/1012212859_01547e3f17.jpg) <br>
+<img src="Images/1012212859_01547e3f17.jpg" alt="Alt text" width="300">
 <em>**Caption**</em> - White dog playing with a red ball on the shore near the water . <br> 
 
 ![Alt text](Images/1000268201_693b08cb0e.jpg) <br>
