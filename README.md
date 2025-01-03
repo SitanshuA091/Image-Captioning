@@ -1,5 +1,8 @@
-# **Image-Captioning**
-**Image Captioning** model trained on the flickr 8k dataset
-- This is a Image Captioning Model 
-- I utilized multiple pretrained models to extract image features
-- The Experimental Notebooks contain the image and text preprocessing,  model training steps
+- Image Captioning Model 
+- Based on standard CNN LSTM architecture ( will add attention later too)
+- Utilized Pretrained models to extract image features 
+- Used Flickr8k dataset
+- It works quite simply We Input the image and it outputs descriptive captions
+
+![Alt text](image_url_or_path "Optional title")
+
